@@ -3,7 +3,7 @@
 echo "BUILD START"
 
 # Create and activate virtual environment
-python3.9 -m venv venv
+python3.8 -m venv venv
 source venv/bin/activate
 
 # Install or upgrade pip
