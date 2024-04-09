@@ -1,27 +1,14 @@
 {
-    "version": 2,
     "builds": [
       {
-        "src": "portfolio_django/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.8" }
-      },
-      {
-        "src": "build_files.sh",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "staticfiles_build"
-        }
+        "src": "wildfire_prevention_backend/wsgi.py",
+        "use": "@vercel/python"
       }
     ],
     "routes": [
       {
-        "src": "/static/(.*)",
-        "dest": "/static/$1"
-      },
-      {
         "src": "/(.*)",
-        "dest": "portfolio_django/wsgi.py"
+        "dest": "wildfire_prevention_backend/wsgi.py"
       }
     ]
-  }
+}
