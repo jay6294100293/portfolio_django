@@ -10,4 +10,4 @@
         "src": "/(.*)",
         "dest": "portfolio_django/wsgi.py"
     }
-]
+]}
