@@ -27,7 +27,6 @@ SECRET_KEY = 'django-insecure-t41t_c3ygutunw*pxv=op4!&lm**d+&2+1jpw(c49+8k^i$dw8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['portfolio_django.vercel.app']
 
 # Application definition
 
@@ -122,7 +121,13 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+MEDIA_URL = '/media/'
 
+# Absolute filesystem path to the directory that will hold user-uploaded files.
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
