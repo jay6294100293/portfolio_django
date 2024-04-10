@@ -31,6 +31,7 @@ class Skill(models.Model):
     Percentage = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    profile = models.ForeignKey(Profile, related_name='skills', on_delete=models.CASCADE)
     STATUS_CHOICES = (
         ('active', 'Active'),
         ('inactive', 'Inactive'),
@@ -49,6 +50,7 @@ class Project(models.Model):
         ('Software Engineer', 'Software Engineer'),
         ('Others', 'Others'),
     )
+    profile = models.ForeignKey(Profile, related_name='projects', on_delete=models.CASCADE)
     project_link = models.URLField(blank=True, null=True)
     project_topic = models.CharField(max_length=50, choices=PROJECT_TOPICS, default='active')
     title = models.CharField(max_length=200)
@@ -69,6 +71,7 @@ class Project(models.Model):
 
 class Certification(models.Model):
     title = models.CharField(max_length=200)
+    profile = models.ForeignKey(Profile, related_name='certifications', on_delete=models.CASCADE)
     certification_pic = models.ImageField(upload_to='certification_pic/', blank=True, null=True)
     certificate_icon_pic = models.ImageField(upload_to='certificate_icon_pic/', blank=True, null=True)
     provider = models.CharField(max_length=200)
@@ -87,7 +90,7 @@ class Certification(models.Model):
 
 
 class WorkExperience(models.Model):
-
+    profile = models.ForeignKey(Profile, related_name='work_experiences', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     company = models.CharField(max_length=200)
     start_date = models.DateField()
@@ -107,6 +110,7 @@ class WorkExperience(models.Model):
 
 
 class Education(models.Model):
+    profile = models.ForeignKey(Profile, related_name='educations', on_delete=models.CASCADE)
     degree = models.CharField(max_length=200)
     degree_city = models.CharField(max_length=200)
     university_logo = models.ImageField(upload_to='university_logo/', blank=True, null=True)
