@@ -46,7 +46,7 @@ The detailed API documentation can be found in the `docs` directory. You can acc
 The backend is deployed automatically using the CI/CD pipeline on every push to the main branch.
 
 ## Contributors
-- [Your Name]
+- [Mrityunjay Gupta]
 
 ## License
 This project is licensed under [MIT License] - insert appropriate license.
