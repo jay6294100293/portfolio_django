@@ -39,8 +39,6 @@ To run the backend server locally:
 3. Apply database migrations using `python manage.py migrate`.
 4. Start the development server using `python manage.py runserver`.
 
-## API Documentation
-The detailed API documentation can be found in the `docs` directory. You can access it by running the server and navigating to `/docs` endpoint in your browser.
 
 ## Deployment
 The backend is deployed automatically using the CI/CD pipeline on every push to the main branch.
